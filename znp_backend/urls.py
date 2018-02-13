@@ -16,6 +16,11 @@ Including another URLconf
 from django.conf.urls import url
 from django.contrib import admin
 
+from api.views import EventApi, EventListApi
+
 urlpatterns = [
     url(r'^admin/', admin.site.urls),
+    url(r'^event/$', EventApi.as_view()),
+    url(r'^event/(?P<event_id>\d+)/$', EventApi.as_view()),
+    url(r'^event-list/$', EventListApi.as_view()),
 ]
