@@ -17,14 +17,6 @@ class EventApi(APIView):
 
         return Response(event_serializer.data, status=status.HTTP_200_OK)
 
-    def post(self, request, format=None):
-        event_serializer = EventSerializer(data=request.data)
-
-        if event_serializer.is_valid():
-            event_serializer.save()
-            return Response(event_serializer.data, status=status.HTTP_201_CREATED)
-
-        return Response(event_serializer.errors, status=status.HTTP_400_BAD_REQUEST)
 
     def put(self, request, event_id, format=None):
 

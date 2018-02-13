@@ -10,4 +10,4 @@ class Event(models.Model):
     start_date = models.DateField('Pričetek', blank=True, null=True)
     end_date = models.DateField('Zaključek', blank=True, null=True)
     img = models.ImageField('Slika')
-    registrations = JSONField('Prijave', default=None)
+    registrations = JSONField('Prijave', blank=True, null=True)
